@@ -1,14 +1,14 @@
-const inpuIdade = document.querySelector('#idade')
+const inputIdade = document.querySelector('#idade')
 const inputPeso = document.querySelector('#peso')
 const btnVerifica = document.querySelector('#btn-num')
-const divResultado = document.querySelector('#div01')
+const divResultado = document.querySelector('#div-01')
 
 let cont12 = 0
 let contPode = 0
 let contNaoPode = 0
 
 btnVerifica.addEventListener('click', (evt) => {
-    let idade = Number(inpuIdade.value)
+    let idade = Number(inputIdade.value)
     let peso = Number(inputPeso.value)
 
     if ((idade >= 18) && (idade <= 60) && (peso > 50)) {
@@ -19,11 +19,11 @@ btnVerifica.addEventListener('click', (evt) => {
 
     cont12++
 
-    if (cont12 == 4) {
-        inpuIdade.setAttribute('disabled', 'disabled')
+    if (cont12 == 1) {
+        inputIdade.setAttribute('disabled', 'disabled')
         inputPeso.setAttribute('disabled', 'disabled')
 
-        divResultado.innerHTML = `TOTAL DE PESSOA QUE PODEM DOAR ${contPode} <br> TOTAL DE PESSOA QUE NÃO PODEM DOAR ${contNaoPode} `
+        divResultado.innerHTML = `TOTAL DE PESSOAS QUE PODEM DOAR ${contPode} <br> TOTAL DE PESSOAS QUE NÃO PODEM DOAR ${contNaoPode} `
     }
 
     inpuIdade.value = ''

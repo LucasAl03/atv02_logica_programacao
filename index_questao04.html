@@ -12,40 +12,32 @@
     <div id="geral">
         <h1> Questão 04 </h1>
 
-        <h2> Entrar com um nome, idade e sexo de 20 pessoas. Imprimir: </h2>
+        <label for="name"> Nome: </label>
+        <input type="text" name="name" id="name"><br>
+<p></p>
+        <label for="idade"> Idade: </label>
+        <input type="text" name="idade" id="idade"><br>
+<p></p>
+        <label for="sexo"> Sexo: </label><br>
+        <input type="checkbox" id="masculino" value="masculino" onclick="onlyOne(this)" name="check">Masculino<br>
+        <input type="checkbox" id="feminino" value="feminino" onclick="onlyOne(this)" name="check">Feminino
+
+        <br><button id="btn-num"> Confirmar </button>
+
+        <h4>Quantas pessoas tem idade inferior a 18 anos:</h4>
+        <div id="div-a"></div>
+
+        <h4>Quantas pessoas acima de 65 anos:</h4>
+        <div id="div-b"></div>
+
+        <h4>Total de pessoas cuja idade esteja entre 18 e menor que 65 anos:</h4>
+        <div id="div-c"></div>
         
-        <label for="nome"> Insisa aqui o Nome: </label><br>
-        <input type="text" name="idade" id="nome">
-
-        <br>
-
-        <label for="idade"> Insisa aqui a idade: </label><br>
-        <input type="text" name="idade" id="idade">
-
-        <br>
-
-        <label for="sexo"> Escolha o sexo: </label><br>
-        M<input type="checkbox" id="masculino" onclick="myFunction(this)"> <br>
-        F<input type="checkbox" id="feminino" onclick="myFunction(this)">
-        <p id="text1" style="display:none">Checkbox is CHECKED! for male</p>
-        <p id="text2" style="display:none">Checkbox is CHECKED! for female</p>
-
-        <br>
-        <br>
-        <button id="btn-num"> Verificar </button>
-        <br>
-        <h3>Quantas pessoas tem idade inferior a 18:</h3>
-        <div id="div-01"></div>
-        <br>
-        <h3>Quantas pessoas acima de 65:</h3>
-        <div id="div-02"></div>
-        <br>
-        <h3>Total de pessoas cuja a idade esteja entre 18 e menor que 65 anos:</h3>
-        <div id="div-03"></div>
-        <br>
-        <h3>Quantas pessoas do sexo feminino e masculino:</h3>
-        <div id="div-04"></div>
+        <h4>Quantas pessoas do sexo feminino e masculino:</h4>
+        <div id="div-d"></div>
 
     </div>
+
+
 </body>
 </html>
