@@ -2,7 +2,6 @@ const btnNum = document.querySelector('#btn-num')
 const Div01 = document.querySelector('#div-01')
 
 let cont = 0
-let acum = 0.0
 
 btnNum.addEventListener('click', (evt)=>{
     for(i = 1; i <= 1000; i++){
