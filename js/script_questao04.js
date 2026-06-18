@@ -25,8 +25,7 @@ function onlyOne(checkbox) {
 
 btnNum.addEventListener('click', (evt)=>{
     let idade = Number(inputIdade.value)
-    let masc = Number(inputM.value)
-    let fem = Number(inputF.value)
+    
 
     if(idade < 18){
         cont18++
@@ -39,8 +38,8 @@ btnNum.addEventListener('click', (evt)=>{
     if (cont20 == 1) {
         inputIdade.setAttribute('disabled', 'disabled')
         inputNome.setAttribute('disabled', 'disabled')
-        inputF.setAttribute('disabled', 'disabled')
 
+        divA.innerHTML = ``
     }
 })
 
