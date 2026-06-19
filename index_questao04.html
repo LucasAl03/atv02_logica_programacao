@@ -12,8 +12,10 @@
     <div id="geral">
         <h1> Questão 04 </h1>
 
-        <label for="name"> Nome: </label>
-        <input type="text" name="name" id="name"><br>
+        <form id="form-pessoa">
+
+        <label for="nome"> Nome: </label>
+        <input type="text" name="nome" id="nome"><br>
 <p></p>
         <label for="idade"> Idade: </label>
         <input type="text" name="idade" id="idade"><br>
@@ -22,7 +24,12 @@
         <input type="checkbox" id="sexo" value="masculino" onclick="onlyOne(this)" name="check">Masculino<br>
         <input type="checkbox" id="sexo" value="feminino" onclick="onlyOne(this)" name="check">Feminino
 
-        <br><button id="btn-num"> Confirmar </button>
+        <br><button type="submit">Adicionar</button>
+        <button type="reset">Limpar</button>
+
+        </form>
+         
+        <div id="div-lista"></div>
 
         <h4>Quantas pessoas tem idade inferior a 18 anos:</h4>
         <div id="div-a"></div>
