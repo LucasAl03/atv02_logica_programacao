@@ -45,7 +45,7 @@ const addPessoa = (objPessoa)=>{
 
 const listPessoa = () =>{
     pessoas.forEach((elem, i)=>{
-        divLista.innerHTML += `${i + 1} - ${elem.name}, ${elem.idade} anos, do sexo ${elem.sexo}`
+        divLista.innerHTML += `${i + 1} - ${elem.name}, ${elem.idade} anos, do sexo ${elem.sexo} <br>`
     })
 }
 
