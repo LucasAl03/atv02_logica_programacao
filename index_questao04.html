@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Atividade 02</title>
 
-    <script src="js/script_questao04.js" defer></script>
+    <script src="js/script_questao04.js" type="module" defer></script>
 
 </head>
 <body>
@@ -14,37 +14,33 @@
 
         <h2> Entrar com um nome, idade e sexo de 20 pessoas. Imprimir: </h2>
         
-        <label for="nome"> Insisa aqui o Nome: </label><br>
-        <input type="text" name="idade" id="nome">
+        <div id="div-form">
+            <form id="form-pessoa">
+                <label for="name">Insira o nome:</label>
+                <input type="text" id="name" name="name">
+                <p></p>
+                <label for="idade">Insira a idade:</label>
+                <input type="text" id="idade" name="idade">
 
-        <br>
+                <div class="masculino">
+                    <label for="masculino">Masculino</label>
+                    <input type="radio" id="masculino" name="sexo" value="masculino">
+                </div>
 
-        <label for="idade"> Insisa aqui a idade: </label><br>
-        <input type="text" name="idade" id="idade">
+                <div class="feminino">
+                    <label for="feminino">Feminino</label>
+                    <input type="radio" id="feminino" name="sexo" value="feminino">
+                </div>
 
-        <br>
+                <button type="submit"> Adicionar </button>
+                <button type="reset"> Limpar </button>
+            </form>
+        </div>
 
-        <label for="sexo"> Escolha o sexo: </label><br>
-        M<input type="checkbox" id="masculino" onclick="myFunction(this)"> <br>
-        F<input type="checkbox" id="feminino" onclick="myFunction(this)">
-        <p id="text1" style="display:none">Checkbox is CHECKED! for male</p>
-        <p id="text2" style="display:none">Checkbox is CHECKED! for female</p>
-
-        <br>
-        <br>
-        <button id="btn-num"> Verificar </button>
-        <br>
-        <h3>Quantas pessoas tem idade inferior a 18:</h3>
-        <div id="div-01"></div>
-        <br>
-        <h3>Quantas pessoas acima de 65:</h3>
-        <div id="div-02"></div>
-        <br>
-        <h3>Total de pessoas cuja a idade esteja entre 18 e menor que 65 anos:</h3>
-        <div id="div-03"></div>
-        <br>
-        <h3>Quantas pessoas do sexo feminino e masculino:</h3>
-        <div id="div-04"></div>
+        <div id="div-lista-pessoas">
+            
+        </div>
+        
 
     </div>
 </body>
