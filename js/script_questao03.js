@@ -1,7 +1,7 @@
 const inpuIdade = document.querySelector('#idade')
 const inputPeso = document.querySelector('#peso')
 const btnVerifica = document.querySelector('#btn-num')
-const divResultado = document.querySelector('#div01')
+const divResultado = document.querySelector('#div-result')
 
 let cont12 = 0
 let contPode = 0
@@ -19,11 +19,13 @@ btnVerifica.addEventListener('click', (evt) => {
 
     cont12++
 
-    if (cont12 == 4) {
+
+    
+    if (cont12 == 2) {
         inpuIdade.setAttribute('disabled', 'disabled')
         inputPeso.setAttribute('disabled', 'disabled')
 
-        divResultado.innerHTML = `TOTAL DE PESSOA QUE PODEM DOAR ${contPode} <br> TOTAL DE PESSOA QUE NÃO PODEM DOAR ${contNaoPode} `
+        divResultado.innerHTML = `Total de pessoas que podem doar ${contPode} <p> Total de pessoas que NÃO podem doar ${contNaoPode}`
     }
 
     inpuIdade.value = ''
