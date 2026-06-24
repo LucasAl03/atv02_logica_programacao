@@ -1,70 +1,56 @@
-const btnNum = document.querySelector('#btn-num')
-const Div01 = document.querySelector('#div-01')
-const Div02 = document.querySelector('#div-02')
-const Div03 = document.querySelector('#div-03')
-const Div04 = document.querySelector('#div-04')
-const inputIdade = document.querySelector('#idade')
-const inputM = document.querySelector('#masculino')
-const inputF = document.querySelector('#feminino')
-const inputNome = document.querySelector('#nome')
+//pegando elementos do DOM
+const formPessoa = document.querySelector('#form-pessoa')
+const divLista = document.querySelector('#div-lista-pessoas')
+const botaoSubmit = formPessoa.querySelector('button[type="submit"]')
 
-let cont12 = 0
+let cont20 = 0
 let cont18 = 0
 let cont65 = 0
 let cont1865 = 0
-let contM = 0
 let contF = 0
+let contM = 0
 
-function myFunction(element) {
-    document.getElementById("text1").style.display = "none";
-    document.getElementById("text2").style.display = "none";
+formPessoa.addEventListener('submit', (evt)=>{
+    evt.preventDefault()
 
-    if(element.checked != true) {
-         return true;
+    cont20++
+
+    const dadosForm = new FormData(formPessoa)
+    
+    const pessoa = {
+        nome: dadosForm.get('name'),
+        idade: dadosForm.get('idade'),
+        sexo: dadosForm.get('sexo')
     }
 
-    document.getElementById("masculino").checked = false;
-    document.getElementById("feminino").checked = false;
+    console.log(pessoa.nome, pessoa.idade, pessoa.sexo)
 
-    document.getElementById(element.id).checked = true;
-    
-}
+    formPessoa.reset()
 
-btnNum.addEventListener('click', (evt)=>{
-    let idade = Number(inputIdade.value)
-    let masculino = Number(inputM.value)
-    let feminino = Number(inputF.value)
-    
 
-    if(idade < 18){
+    if(pessoa.idade < 18){
         cont18++
-    }else if(idade > 65){
-        cont65++
-    }else if((idade >= 18) && (idade < 65)){
-        cont1865++
-    }else if(masculino){
-        contM++
+    }else if((pessoa.idade >= 18) && (pessoa.idade <= 65)){
+       cont1865++
     }else{
-        contF++
-    } 
+        cont65++
+    }
 
-    cont12++
+    if (pessoa.sexo == 'masculino'){
+        console.log(contM++)
+    }else if(pessoa.sexo == 'feminino'){
+        console.log(contF++)
+    }
 
-    if(cont12 == 2){
-        inputIdade.setAttribute('disabled', 'disabled')
-        inputNome.setAttribute('disabled', 'disabled')
-        inputM.setAttribute('disabled', 'disabled')
-        inputF.setAttribute('disabled', 'disabled')
+    divLista.innerHTML = ` Pessoas do sexo feminino: ${contF} <p> Pessoas do sexo masculino: ${contM} <p> Menores de 18 anos: ${cont18} <p> Idade entre 18 e 65: ${cont1865} <p> Idade maior que 65: ${cont65}`
 
-        Div01.innerHTML = `Total de pessoas com idade inferior a 18 anos: ${cont18}`
-        Div02.innerHTML = `Total de pessoas com idade acima de 65 anos: ${cont65}`
-        Div03.innerHTML = `Total de pessoas com idade entre 18 e menor que 65 anos: ${cont1865}`
-        Div04.innerHTML = `Total de pessoas do sexo masculino: ${contM}. <br> Total de pessoas do sexo feminino ${contF}.`
-        }
-
-    inputIdade.value = ''
-    inputNome.value = ''
-    inputM.value = ''
-    inputF.value = ''
+    
+    
 })
 
+/*
+Quantas pessoas tem idade inferior a 18:
+Quantas pessoas acima de 65:
+Total de pessoas cuja a idade esteja entre 18 e menor que 65 anos:
+Quantas pessoas do sexo feminino e masculino:
+*/
