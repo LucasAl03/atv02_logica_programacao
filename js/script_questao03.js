@@ -1,14 +1,16 @@
-const inpuIdade = document.querySelector('#idade')
+const inputIdade = document.querySelector('#idade')
 const inputPeso = document.querySelector('#peso')
 const btnVerifica = document.querySelector('#btn-num')
+
 const divResultado = document.querySelector('#div-result')
+
 
 let cont12 = 0
 let contPode = 0
 let contNaoPode = 0
 
 btnVerifica.addEventListener('click', (evt) => {
-    let idade = Number(inpuIdade.value)
+    let idade = Number(inputIdade.value)
     let peso = Number(inputPeso.value)
 
     if ((idade >= 18) && (idade <= 60) && (peso > 50)) {
